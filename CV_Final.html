@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Chen Wang</title>
+    <style>
+        :root {
+            --sidebar-bg: #566978;
+            --sidebar-text: #ffffff;
+            --main-bg: #ffffff;
+            --main-text: #333333;
+            --accent-color: #f0f0f0; /* Light grey for section dividers */
+            --header-color: #2c3e50;
+            --sidebar-width: 29%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #555;
+            color: var(--main-text);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 13px; /* Reduced base font size */
+        }
+
+        .resume-container {
+            display: flex;
+            width: 210mm;
+            max-width: 100%;
+            background-color: var(--main-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            /* min-height: 297mm;  Let height be auto to fit content, but target A4 */
+            margin: 2rem 0;
+        }
+
+        /* Sidebar Styles */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 1.5rem; /* Reduced padding */
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem; /* Reduced gap */
+        }
+
+        .profile-photo {
+            width: 120px; /* Smaller photo */
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            margin: 0 auto 0.5rem auto;
+            display: block;
+        }
+
+        .sidebar-section h3 {
+            text-transform: uppercase;
+            font-size: 0.9rem; /* Smaller heading */
+            letter-spacing: 1px;
+            border-bottom: 1px solid #7a8b99;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            color: #eee;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            font-size: 0.8rem; /* Smaller text */
+        }
+
+        .contact-info div {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .contact-info i {
+            width: 16px;
+            text-align: center;
+        }
+
+        .education-item, .cert-item {
+            margin-bottom: 1rem;
+        }
+
+        .degree {
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+        }
+
+        .school {
+            font-size: 0.8rem;
+            color: #ddd;
+        }
+
+        .year {
+            font-size: 0.75rem;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #6c7e8c;
+        }
+
+        /* Main Content Styles */
+        main {
+            flex-grow: 1;
+            padding: 2rem 2.5rem; /* Reduced padding */
+            background-color: var(--main-bg);
+        }
+
+        header {
+            margin-bottom: 1.5rem; /* Reduced margin */
+        }
+
+        h1 {
+            font-size: 2rem; /* Smaller name */
+            text-transform: uppercase;
+            margin: 0;
+            color: #222;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .job-title-header {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
+        .main-section {
+            margin-bottom: 1.5rem; /* Compact sections */
+        }
+
+        .main-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .summary-text {
+            color: #444;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #222;
+        }
+
+        .exp-company {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .exp-details {
+            margin: 0.3rem 0 0 0;
+            padding-left: 1.2rem;
+            color: #444;
+            font-size: 0.85rem; /* Smaller body text */
+        }
+
+        .exp-details li {
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        /* Print Settings */
+        @media print {
+            @page {
+                margin: 0;
+                size: A4;
+            }
+            body {
+                background-color: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                display: block;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                min-height: 100vh;
+                height: 100vh; /* Force height */
+            }
+            aside {
+                 -webkit-print-color-adjust: exact;
+                 print-color-adjust: exact;
+                 height: 100%;
+            }
+        }
+    </style>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Sidebar (Left) -->
+        <aside>
+            <img src="Chen_CV.jpg" alt="Profile Photo" class="profile-photo">
+
+            <div class="sidebar-section">
+                <!-- Placeholders for Contact Info -->
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Berlin, Germany</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>+49 176 4561 9321</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>congxiangwang@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-linkedin"></i>
+                        <span style="font-size: 13px;">linkedin.com/in/chenwang12623</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-github"></i>
+                        <span>github.com/darkbloomy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Education</h3>
+                <div class="education-item">
+                    <span class="degree">Data Science Bootcamp</span>
+                    <span class="school">Alfatraining</span>
+                    <span class="year">Aug 2020 - Feb 2021</span>
+                </div>
+                <div class="education-item">
+                    <span class="degree">Ph.D., Population Genetics and Marine Molecular Biology</span>
+                    <span class="school">University of Bremen</span>
+                    <span class="year">2010 - 2016</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Certifications</h3>
+                <div class="cert-item">
+                    <span class="degree">Associate AI Engineer</span>
+                </div>
+                <div class="cert-item">
+                    <span class="degree">PSPO I (Scrum Product Owner)</span>
+                </div>
+                <div class="cert-item">
+                    <span class="degree">Business Analyst & Data Scientist</span>
+                    <span class="school">Alfatraining</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Key Skills</h3>
+                <ul class="skills-list">
+                    <li>Python, SQL</li>
+                    <li>Tableau, Power BI, Apache Superset</li>
+                    <li>Full-stack Web Dev (T3)</li>
+                    <li>JavaScript / TypeScript</li>
+                    <li>Project Management (Agile/Scrum)</li>
+                    <li>DBT, Data Modelling</li>
+                    <li>GenAI & Automation</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content (Right) -->
+        <main>
+            <header>
+                <h1>Chen Wang</h1>
+                <div class="job-title-header" style="font-size: 18px;">People Data Analytics Engineer | Ph.D.</div>
+            </header>
+
+            <div class="main-section">
+                <h2>Professional Summary</h2>
+                <div class="summary-text">
+                    Passionate Data & Analytics professional with a Ph.D. and a proven track record in bridging the gap between technical data solutions and business requirements. Expert in People Analytics, Pricing & Sales Engineering, and Data Engineering. Skilled in full-stack web application development and automation, with a strong focus on providing insightful analytical solutions for stakeholders.
+                </div>
+            </div>
+
+            <div class="main-section">
+                <h2>Work History</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">People Data Analytics Engineer</span>
+                            <span class="exp-company"> | Tesla</span>
+                        </div>
+                        <span class="exp-date">Feb 2024 - Present</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li><strong>Data Visualization & Dashboarding:</strong> Initialized and built diverse interactive dashboards in Tableau and Ziplabs (e.g., Attendance, Sickness, Recruiting, Compensation) to deliver multi-perspective insights for leadership.</li>
+                        <li><strong>Data Engineering & ETL:</strong> Managed data pipelines for HR functions including integrity checks (Kronos, Track data) and RLS rules, enhancing efficiency in timekeeping and payroll.</li>
+                        <li><strong>Automation & Development:</strong> Pioneered automation tools for compliance and payroll optimization. Leveraging AI (Copilot) and T3 stack to build internal HR web applications and dynamic landing pages.</li>
+                        <li><strong>Stakeholder Management:</strong> Led cross-functional support for HR teams, optimizing workflows and defining KPIs.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Senior Business Analyst</span>
+                            <span class="exp-company"> | Auto1 Group</span>
+                        </div>
+                        <span class="exp-date">Feb 2022 - Jan 2024</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Led a team to drive the Pricing roadmap and pipelines based on defined business goals.</li>
+                        <li>Created an analytical layer of data marts to enable accurate raw data for reporting.</li>
+                        <li>Planned and forecasted business key metrics to leverage the entire business value chain.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Business Analyst</span>
+                            <span class="exp-company"> | Auto1 Group</span>
+                        </div>
+                        <span class="exp-date">Apr 2021 - Feb 2022</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Developed incentive schemes with qualitative and quantitative metrics to evaluate pricing performance.</li>
+                        <li>Built a single source of truth for pricing topics and maintained pricing conditions.</li>
+                        <li>Created regular and ad-hoc reports for various levels of stakeholders.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Manager Supplier Relationships</span>
+                            <span class="exp-company"> | Zageno GmbH</span>
+                        </div>
+                        <span class="exp-date">Aug 2019 - Jul 2020</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Managed key accounts and recommended measures to improve vendors' eCommerce footprint.</li>
+                        <li>Liaised between internal teams and external stakeholders (enterprise customers, suppliers).</li>
+                        <li>Closed partnerships with key players in the life sciences segment.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Product Data Analyst</span>
+                            <span class="exp-company"> | Zageno GmbH</span>
+                        </div>
+                        <span class="exp-date">Oct 2017 - Jun 2019</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Performed ETL and curation to maintain high levels of data integrity.</li>
+                        <li>Conducted sales engineering analysis based on historical purchase data.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
