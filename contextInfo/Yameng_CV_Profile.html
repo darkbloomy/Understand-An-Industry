@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Yameng Lu</title>
+    <style>
+        :root {
+            --sidebar-bg: #566978;
+            --sidebar-text: #ffffff;
+            --main-bg: #ffffff;
+            --main-text: #333333;
+            --accent-color: #f0f0f0;
+            --header-color: #2c3e50;
+            --sidebar-width: 29%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #555;
+            color: var(--main-text);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 13px;
+        }
+
+        .resume-container {
+            display: flex;
+            width: 210mm;
+            max-width: 100%;
+            background-color: var(--main-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            margin: 2rem 0;
+        }
+
+        /* Sidebar Styles */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 1.5rem;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            margin: 0 auto 0.5rem auto;
+            display: block;
+        }
+
+        .sidebar-section h3 {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #7a8b99;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            color: #eee;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            font-size: 0.8rem;
+        }
+
+        .contact-info div {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            word-break: break-word;
+        }
+
+        .contact-info i {
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .education-item, .cert-item {
+            margin-bottom: 1rem;
+        }
+
+        .degree {
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+        }
+
+        .school {
+            font-size: 0.8rem;
+            color: #ddd;
+        }
+
+        .year {
+            font-size: 0.75rem;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85rem;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #6c7e8c;
+        }
+
+        /* Main Content Styles */
+        main {
+            flex-grow: 1;
+            padding: 2rem 2.5rem;
+            background-color: var(--main-bg);
+        }
+
+        header {
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin: 0;
+            color: #222;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .job-title-header {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
+        .main-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .main-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .summary-text {
+            color: #444;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #222;
+        }
+
+        .exp-company {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .exp-details {
+            margin: 0.3rem 0 0 0;
+            padding-left: 1.2rem;
+            color: #444;
+            font-size: 0.85rem;
+        }
+
+        .exp-details li {
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+
+        /* Print Settings */
+        @media print {
+            @page {
+                margin: 0;
+                size: A4;
+            }
+            body {
+                background-color: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                display: block;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                min-height: 100vh;
+                height: 100vh;
+            }
+            aside {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                height: 100%;
+            }
+        }
+    </style>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Sidebar (Left) -->
+        <aside>
+            <img src="../.github/assets/Photo_yl.jpg" alt="Profile Photo" class="profile-photo">
+
+            <div class="sidebar-section">
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Berlin, Germany</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>+49 176 5517 1142</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>ym.olivia@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/yameng-lu</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Education</h3>
+                <div class="education-item">
+                    <span class="degree">Dr. Rer. Nat. Molecular Biology</span>
+                    <span class="school">University of Bremen / Alfred-Wegener-Institute Helmholtz-Centrum</span>
+                    <span class="year">2011 - 2016</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Certifications</h3>
+                <div class="cert-item">
+                    <span class="degree">AWS Technical Essentials</span>
+                </div>
+                <div class="cert-item">
+                    <span class="degree">Google Cloud Professional Data Analytics</span>
+                </div>
+                <div class="cert-item">
+                    <span class="degree">Google IT Automation with Python Professional Certificate</span>
+                </div>
+                <div class="cert-item">
+                    <span class="degree">Big Data on AWS</span>
+                </div>
+                <div class="cert-item">
+                    <span class="degree">IBM ETL and Data Pipelines with Shell, Airflow and Kafka</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Key Skills</h3>
+                <ul class="skills-list">
+                    <li>Python, SQL, R, Bash</li>
+                    <li>Data Analytics & BI</li>
+                    <li>Tableau, Power BI, Superset</li>
+                    <li>DBT, Data Modeling</li>
+                    <li>Snowflake, AWS, Google Cloud</li>
+                    <li>ETL & Data Engineering</li>
+                    <li>Project Management</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Languages</h3>
+                <ul class="skills-list">
+                    <li>English</li>
+                    <li>German</li>
+                    <li>Chinese</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content (Right) -->
+        <main>
+            <header>
+                <h1>Yameng Lu</h1>
+                <div class="job-title-header" style="font-size: 18px;">Senior Analytics Engineer | Ph.D.</div>
+            </header>
+
+            <div class="main-section">
+                <h2>Professional Summary</h2>
+                <div class="summary-text">
+                    Experienced senior analytics engineer in business intelligence, data engineering and architecture, backed by a strong academic background in statistics/analytics. Proven expertise in designing and implementing scalable analytics platforms, leading cross-functional teams, and driving data-driven insights across organizations. Specialized in quality control analytics, customer satisfaction metrics, and building self-service analytics solutions for large stakeholder bases.
+                </div>
+            </div>
+
+            <div class="main-section">
+                <h2>Work History</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Senior Analytics Engineer</span>
+                            <span class="exp-company"> | Enpal</span>
+                        </div>
+                        <span class="exp-date">Dec 2025 - Present</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Owned end-to-end Customer Experience data strategy, including analytics infrastructure, dashboarding, and governance across multiple business divisions.</li>
+                        <li>Architected AI-driven customer intelligence capabilities to transform unstructured feedback into structured insights, enabling scalable sentiment, topic, and trend analysis for strategic decision-making.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Senior BI Analyst - Customer</span>
+                            <span class="exp-company"> | Enpal</span>
+                        </div>
+                        <span class="exp-date">Apr 2025 - Nov 2025</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Serve as the primary POC for Customer Satisfaction data, delivering weekly insights to 170+ stakeholders, including C-Level, mid-level huddles and operational teams, strengthened cross-functional alignment on customer experience KPIs.</li>
+                        <li>Led Data & BI Guilds and Workshops, enhancing knowledge sharing, improving internal best practices, and increasing self-service analytics adoption across departments.</li>         
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Senior BI Analyst - Fulfillment</span>
+                            <span class="exp-company"> | Enpal</span>
+                        </div>
+                        <span class="exp-date">Nov 2023 - Mar 2025</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Built a scalable Quality Analytics Platform supporting Solar PV, Heat Pumps, Service, and Rework, enabling proactive quality monitoring and operational performance improvements across teams.</li>
+                        <li>Drove Analytic Engineering best practices (PR reviews, documentation, self-service enablement) and established the core reporting stack powering >50 downstream reports/dashboards, 80+ self-service users, and 6K+ monthly queries.</li>
+
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Team Lead Data Analytics</span>
+                            <span class="exp-company"> | Centogene</span>
+                        </div>
+                        <span class="exp-date">Jun 2022 - Oct 2023</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Lead a team ensuring reliable and precise data asset reporting for the Biodatabank, serving both external (Biotech and Pharma customers, Investors, etc.) and internal stakeholders.</li>
+                        <li>Define and refine KPIs to better gauge primary diagnostic services and pharma business.</li>
+                        <li>Lead the creation of versatile analytic tools and dashboards, broadening the scope of biodata quantification and secondary analysis, and addressing a wide range of business needs.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Data Quality Manager</span>
+                            <span class="exp-company"> | Centogene</span>
+                        </div>
+                        <span class="exp-date">Dec 2020 - Jun 2022</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Oversee data quality strategic projects, providing practical, effective solutions.</li>
+                        <li>Work closely with IT and Business Development teams, improving data flow by utilizing AWS services and enhancing query performance and efficiency.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Postdoctoral Researcher/Bioinformatician</span>
+                            <span class="exp-company"> | ETH Zürich</span>
+                        </div>
+                        <span class="exp-date">2019</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Swiss National Science Foundation (SNF) - German Research Foundation (DFG) project</li>
+                        <li>RNAseq / transcriptomic data analysis</li>
+                        <li>Develop statistical tools and utilizing them to study gut parasite infection</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Postdoctoral Researcher/Bioinformatician</span>
+                            <span class="exp-company"> |  Leibniz-Institute of Freshwater Ecology and Inland Fisheries</span>
+                        </div>
+                        <span class="exp-date">2017 - 2018</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Utilize NGS data to understand molecular mechanisms of host immune system</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Dr. Rer. Nat, Molecular Biology</span>
+                            <span class="exp-company"> |  University Bremen / AlfredWegener-Institute Helmholtz-Centrum, Germany</span>
+                        </div>
+                        <span class="exp-date">2011 - 2016</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Specialized in genomic and transcriptomic NGS data analytics</li>
+                        <li>Achieved Magna Cum Laude distinction</li>
+                        <li>More than 10 publications in Science Advances, BMC Genomics, Molecular Ecology, and other journals</li>
+                    </ul>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

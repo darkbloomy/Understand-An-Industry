@@ -1,0 +1,65 @@
+Clarification on Product & Analytics Role - 2026
+
+
+
+Understanding the new role
+    1. Analytics & Reporting
+        ◦ “Design & setup: dashboards, reporting & analytics”
+        ◦ Interpretation: This is squarely within your current analytics skill set, creating dashboards, building reporting pipelines, and supporting data analysis.
+    2. Platform Operations & Technical Enablement
+        ◦ “Tool governance & system setup”
+        ◦ Interpretation: You’d be ensuring that the tool AskNicely is set up correctly, access is managed, and they’re compliant with internal standards. This is more operational than pure analytics.
+    3. Primary Point of Contact for Technical Support
+        ◦ “AskNicely Technical support, access management & onboarding”
+        ◦ Interpretation: This is closer to a product operations / enablement role, helping users adopt the platform, troubleshoot issues, and manage access. You’re not necessarily doing product management (defining strategy, roadmap), but you are the go-to person for technical support and onboarding, so a mix of operational and analytical responsibilities.
+My goal is to grow toward a Staff/Principal-level role in Analytics. In my recent yearly review 2025, the feedback emphasized 
+
+    • Increase Visibility: Increase visibility as the primary Customer Satisfaction data expert across the organization. Seek out strategic partners that can reinforce our efforts and spread influence across organization.
+
+    • Strategic Focus: Increase scope beyond survey-based responses which will also engage new stakeholder groups that are less domain-specific.
+
+One initiative I am particularly excited about exploring was building a more advanced Customer Intelligence Engine - build an internal AI-powered tool that automatically analyzes and classifies open-text customer feedback (proposal attached). I see this as a strong next step in expanding our data strategy at Enpal and increasing cross-functional influence.
+Project Proposal: Customer Intelligence Engine
+Objective: 
+Management has expressed a clear need for a more structured, data-driven understanding of customer feedback. We want to build an internal AI-powered tool that automatically analyzes and classifies open-text customer feedback. 
+Business Owner: Elena Moujaes
+Techincal Owner: Yameng Lu
+Main Stakeholder: 
+    • Business Development
+    • Operations
+    • CX (Customer Experience) Team
+Divisions: PV, Heat, Energy, Enpal.pro
+These stakeholders will use the output for performance analysis, prioritization of initiatives and management reporting.
+The goal is to:
+    • Convert unstructured feedback into structured data
+    • Identify key pain points and positive drivers
+    • Enable topic-based analysis over time
+    • Allow team-level performance insights (e.g. Sales teams)
+Process: 
+    • The AI should automatically analyze open-text responses
+    • Extract relevant topics / keywords mentioned by the customer
+    • Tag each feedback entry with one or multiple standardized topics
+    • detect sentiment per topic (e.g. Installation = positive, Service = negative)
+Pain Point & Strength Analysis
+For a selected time period:
+    • What are the most frequently mentioned negative topics?
+    • What are the most frequently mentioned positive topics?
+    • What is the relative share of each topic?
+    • Which topics are driving low CSAT / NPS?
+Trend Analysis Over Time
+    • How often a topic is mentioned over time (weekly / monthly)
+    • Topic trends (e.g. “Service availability” mentions increasing?)
+    • Sentiment trends per topic
+    • Example: 
+        ◦ Topic “Installation Quality” mentioned 120 times in January → 80 times in February
+        ◦ Negative sentiment decreasing from 40% → 25%
+Level: 
+    • Per survey template
+    • Across all survey templates
+    • per Team or Individual (based on the custom data from AskNicely)
+The output should:
+    • Store topic tags as structured data fields
+    • Allow filtering by: Topic, Sentiment, Survey template, Custom Data 
+    • The AI should continuously learn / adapt
+    • Manual override / correction option (if misclassified)
+

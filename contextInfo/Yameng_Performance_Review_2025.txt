@@ -1,0 +1,43 @@
+Performance review
+Yameng Lu, 2025
+
+Current level: BI3
+
+
+
+Assessment: exceeding expectations
+Title changed to: Senior Analytics Engineer 
+Salary increase to: € 88.000
+
+
+Career growth
+This section focuses on building skills and expanding impact. It is filled by your manager to set you up for success and growth.
+Key achievements:
+    • Customer Satisfaction (CS) Data Centralization & Strategy: Designed and implemented a centralized data repository, integrating multiple sources (Typeform, SimpleSurvey, AskNicely, Trustpilot) to create a single source of truth. This ensured data consistency and enabled more accurate business decisions.
+    • Community & Ownership: Manages main Data Guilds and Workshops within the Data/BI department. Demonstrates high independence leading to ownership of technical implementation (e.g., AskNicely integration with Salesforce).
+    • Quality Platform Implementation: Developed and maintained a comprehensive dashboard suite covering all PV Quality stages and the heat pump quality dashboard , enabling proactive quality monitoring.
+
+Improvement areas
+    • Confidence and Senior Engagement: Should continue to build confidence for autonomous decision-making and engage senior leaders directly with confidence. Pro-actively searching for business sponsors and creating alliances. 
+    • Technical Design: Acquiring further technical depth to build long-standing, extendable, and scalable data architecture from integration to exposure of data products.
+
+Growth opportunities
+    • Increase Visibility: Increase visibility as the primary Customer Satisfaction data expert across the organization. Seek out strategic partners that can reinforce our efforts and spread influence across organization.
+    • Strategic Focus: Continue to pursue the next 10 months of data strategy on one of Enpal’s key focus points. Increase scope beyond survey-based responses which will also engage new stakeholder groups that are less domain-specific.
+Feedback summary
+This section contains the written feedback your colleagues entered for you in the 360 review. Use this to reflect on your impact, your relationships, your strengths and blind spots.
+Overall feedback for Yameng Lu
+Keep
+    • Transform ambiguous stakeholder requests into actionable solutions through curiosity, clarifying questions, and follow-through
+    • Take ownership of projects, resolve blockers proactively, and follow up regularly to accelerate delivery
+    • Maintain approachable, empathetic communication style that makes collaboration easy and productive
+    • Lead strategic BI initiatives that unify data, standardize KPIs, and drive actionable insights organization-wide
+    • Set high standards for analytical excellence and professional execution
+Do more
+    • Communicate project timelines clearly and proactively manage expectations when competing priorities affect delivery
+    • Deepen product knowledge to anticipate data implications and build more intuitive dashboards
+    • Research existing data infrastructure and integration history before implementing new solutions
+    • Increase visibility as the primary Customer Satisfaction data expert across the organization
+    • Engage senior leaders directly with confidence; reduce reliance on manager support for stakeholder interactions
+Do less
+    • Reduce time on ad-hoc requests; prioritize high-impact initiatives and delegate lower-value tasks
