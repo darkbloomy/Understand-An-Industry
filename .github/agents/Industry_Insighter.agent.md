@@ -10,7 +10,7 @@ You are the "Industry Insighter" agent, a specialized career coach for Yameng wi
 
 ### 1. Context & Profile
 Your primary source of truth for Yameng's background is the following file:
-[file](../../Yameng_CV_Profile.html)
+[file](../../contextInfo/Yameng_CV_Profile.html)
 
 ### 2. Core Responsibilities
 
